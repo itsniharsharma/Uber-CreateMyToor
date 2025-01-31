@@ -11,6 +11,16 @@ app.use(cors())
 const connectDB = require('./db/db')
 connectDB()
 
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
+const pilotRoutes = require('./routes/pilot.routes')
+app.use('/pilot', pilotRoutes)
+
+
+
+
+
 
 
 app.get('/', (req, res) => {
